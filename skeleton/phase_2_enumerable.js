@@ -12,9 +12,11 @@ Array.prototype.myEach = function(callback) {
   
 Array.prototype.myMap = function(callback) {
     const NewArray = [];
-    myArray.myEach(function(element) {
-        NewArray.push(callback(element));
 
-    });
+    func = function(element) {
+        NewArray.push(callback(element));
+    }
+    myArray.myEach(func);
     return NewArray;
 };
+

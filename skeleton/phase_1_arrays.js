@@ -30,20 +30,34 @@
 // console.log(Array.prototype.twoSum([1,2,-2,3,-3]))
 
 
+// Array.prototype.transpose = function(arr) {
+
+//     const numRows = arr.length;
+//     const numCols = arr[0].length;
+//     let transposedArray = new Array(numCols).fill(new Array(numRows));
+
+//     for (let i = 0; i < numRows; i++) {
+//         console.log(i);
+//         for (let j = 0; j < numCols; j++) {
+//             console.log(j);
+//             transposedArray[i][j] = arr[j][i];
+//         }
+//     }
+//     return transposedArray;
+// }
+
+// console.log(Array.prototype.transpose([[1,2,3],[1,2,3],[1,2,3]]))
+
 Array.prototype.transpose = function(arr) {
-
-    const numRows = arr.length;
-    const numCols = arr[0].length;
-    let transposedArray = new Array(numCols).fill(new Array(numRows));
-
-    for (let i = 0; i < numRows; i++) {
-        console.log(i);
-        for (let j = 0; j < numCols; j++) {
-            console.log(j);
-            transposedArray[i][j] = arr[j][i];
-        }
+    const result = [];
+    for (let i = 0; i < arr[0].length; i++) {
+      result[i] = [];
+      for (let j = 0; j < arr.length; j++) {
+        result[i][j] = arr[j][i];
+      }
     }
-    return transposedArray;
-}
+    return result;
+  }
 
-console.log(Array.prototype.transpose([[1,2,3],[1,2,3],[1,2,3]]))
+  console.log(Array.prototype.transpose([[1,2,3],[1,2,3],[1,2,3]]))
+

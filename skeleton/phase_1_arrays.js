@@ -13,19 +13,37 @@
 
 // console.log(Array.prototype.uniq([1,2,2,3,4]))
 
-Array.prototype.twoSum = function(arr) {
+// Array.prototype.twoSum = function(arr) {
 
-    let array = []; 
+//     let array = []; 
 
-    for (let i = 0; i < arr.length; i++) {
-        for (let j = 0; j < arr.length; j++) {
-            if ((j > i) && (arr[i] + arr[j] === 0)) {
-                array.push([i,j]);
-            }
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = 0; j < arr.length; j++) {
+//             if ((j > i) && (arr[i] + arr[j] === 0)) {
+//                 array.push([i,j]);
+//             }
+//         }
+//     }
+//     return array;
+// }
+
+// console.log(Array.prototype.twoSum([1,2,-2,3,-3]))
+
+
+Array.prototype.transpose = function(arr) {
+
+    const numRows = arr.length;
+    const numCols = arr[0].length;
+    let transposedArray = new Array(numCols).fill(new Array(numRows));
+
+    for (let i = 0; i < numRows; i++) {
+        console.log(i);
+        for (let j = 0; j < numCols; j++) {
+            console.log(j);
+            transposedArray[i][j] = arr[j][i];
         }
     }
-    return array;
+    return transposedArray;
 }
 
-console.log(Array.prototype.twoSum([1,2,-2,3,-3]))
-
+console.log(Array.prototype.transpose([[1,2,3],[1,2,3],[1,2,3]]))

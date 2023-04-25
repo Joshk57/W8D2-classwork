@@ -9,13 +9,14 @@
 
 Array.prototype.bubbleSort = function(arr) {
     let sorted = false;
-
-    if (!sorted) {
+    // const dup = arr;
+    while (!sorted) {
         sorted = true;
         for (let i = 0; i < arr.length; i++) {
-            if (arr[i] > arr[i + 1]) {
-                let (arr[i] = arr[i+1]);
-                let (arr[i+1] = arr[i]);
+            if (arr[i] > arr[i + 1]){
+                let prev = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = prev;
                 sorted = false;
             }
         }
@@ -24,6 +25,4 @@ Array.prototype.bubbleSort = function(arr) {
 };
 
 
-
-
-console.log(Array.prototype.bubbleSort([2,1,5,3,7]))
+console.log(Array.prototype.bubbleSort([9,2,1,5,4,6,8,3,2,3,4,6,-1,2,-4,56,5,7,10]))

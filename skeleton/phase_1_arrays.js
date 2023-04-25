@@ -1,17 +1,15 @@
 
-
-
-
-Array.prototype.uniq = function() {
+Array.prototype.uniq = function(arr) {
     let array = [];
 
-    for (let i = 0; i < this.length; i++) {
-        if (!array.includes(this[i])) {
-            array.push(this[i]);
+    for (let i = 0; i < arr.length; i++) {
+        if (!array.includes(arr[i])) {
+            array.push(arr[i]);
         }
             
     }
-    console.log(array);
+    return array;
 }
 
 console.log(Array.prototype.uniq([1,2,2,3,4]))
+

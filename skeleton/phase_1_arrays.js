@@ -48,16 +48,23 @@
 
 // console.log(Array.prototype.transpose([[1,2,3],[1,2,3],[1,2,3]]))
 
-Array.prototype.transpose = function(arr) {
-    const result = [];
-    for (let i = 0; i < arr[0].length; i++) {
-      result[i] = [];
-      for (let j = 0; j < arr.length; j++) {
-        result[i][j] = arr[j][i];
-      }
-    }
-    return result;
+// Array.prototype.transpose = function(arr) {
+//     const result = [];
+//     for (let i = 0; i < arr[0].length; i++) {
+//       result[i] = [];
+//       for (let j = 0; j < arr.length; j++) {
+//         result[i][j] = arr[j][i];
+//       }
+//     }
+//     return result;
+// }
+
+//   console.log(Array.prototype.transpose([[1,2,3],[1,2,3],[1,2,3]]))
+
+Array.prototype.myEach = function(callback) {
+  for (let i = 0; i < this.length; i++) {
+    callback(this[i], i, this);
   }
+};
 
-  console.log(Array.prototype.transpose([[1,2,3],[1,2,3],[1,2,3]]))
-
+console.log(Array.prototype.myEach([1,2,3]))

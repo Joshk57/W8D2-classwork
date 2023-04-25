@@ -10,3 +10,11 @@ Array.prototype.myEach = function(callback) {
     console.log(element);
   });
   
+Array.prototype.myMap = function(callback) {
+    const NewArray = [];
+    myArray.myEach(function(element) {
+        NewArray.push(callback(element));
+
+    });
+    return NewArray;
+};
